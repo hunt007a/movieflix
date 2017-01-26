@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-md-4 col-lg-offset-4">
+        <form novalidate name="loginForm" ng-submit="loginVm.formSubmit()">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <strong>Log In</strong>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="useremail">Email Address</label>
+                    <input type="text" class="form-control" ng-model="loginVm.user.email" name="useremail" id="useremail" required/>
+                    <div class="error" ng-messages="loginForm.useremail.$error" ng-if="loginForm.useremail.$dirty">
+                        <p ng-message="required">Email is required</p>
+                        <p ng-message="email">Email not in correct format</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="userpassword">Password</label>
+                    <input type="password" class="form-control" ng-model="loginVm.user.password" name="userpassword" ng-model="loginVm.user.password" id="userpassword" required minlength="4"/>
+                    <div class="error" ng-messages="loginForm.userpassword.$error" ng-if="loginForm.userpassword.$dirty">
+                        <p ng-message="required">Password is required</p>
+                        <p ng-message="minlength">Password must be greater than 6 characters</p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <button type="submit" ng-disabled="loginForm.$invalid" class="btn btn-primary">Log In</button>
+                <a href="#/sign-in" class="btn btn-default">New User?</a>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>

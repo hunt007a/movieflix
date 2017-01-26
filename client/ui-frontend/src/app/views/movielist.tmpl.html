@@ -1,0 +1,40 @@
+<div>
+    <label><h2>Search By</h2></label>
+    <div class="row">
+        <div class="col-md-1">
+            <select class="form-control" ng-model="queryBy" ng-init="queryBy = '$'">
+                <option value="$">All</option>
+                <option value="title" selected>Title</option>
+                <option value="year">Year</option>
+                <option value="type">Type</option>
+                <option value="genre">Genre</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <input type="text" placeholder="Search Here" id="searchBox" class="form-control" ng-model="movieVm.inputText[queryBy]">
+        </div>
+        </div>
+    </div>
+    <table class="table table-hover table-striped">
+        <thead>
+        <tr>
+            <th>Click on Image</th>
+            <th ng-click="movieVm.toggleSort('Title')">Title</th>
+            <th ng-click="movieVm.toggleSort('Year')">Year</th>
+            <th ng-click="movieVm.toggleSort('imdbRating')">IMDB Rating</th>
+            <th ng-click="movieVm.toggleSort('Type')">Type</th>
+            <th ng-click="movieVm.toggleSort('Genre')">Genre</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="movie in movieVm.movie | filter: movieVm.inputText | orderBy:movieVm.sorter.by:movieVm.sorter.reverse">
+                <td><a ng-href="#/movielist/{{movie.id}}"><img class="imgthumb" ng-src="{{movie.poster}}" /></a></td>
+                <td>{{movie.title}}</td>
+                <td>{{movie.year}}</td>
+                <td>{{movie.imdbRating}}</td>
+                <td>{{movie.type}}</td>
+                <td>{{movie.genre}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

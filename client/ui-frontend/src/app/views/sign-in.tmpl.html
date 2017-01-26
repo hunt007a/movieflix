@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-md-6 col-lg-offset-3">
+        <form novalidate name="addUser" ng-submit="signInVm.createUser()" method="post">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <strong>Sign In to for User Access</strong>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="userfirstname">First Name</label>
+                    <input type="text" class="form-control" ng-model="signInVm.user.firstName" id="userfirstname" name="firstName" placeholder="Your First Name" required minlength="4"/>
+                    <div class="error" ng-messages="addUser.firstName.$error" ng-if="addUser.firstName.$dirty">
+                        <p ng-message="required">First Name is required</p>
+                        <p ng-message="minlength">First Name must be greater than 4 characters</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="userlastname">Last Name</label>
+                    <input type="text" class="form-control" ng-model="signInVm.user.lastName" id="userlastname" name="lastName" placeholder="Your Last Name" required/>
+                    <div class="error" ng-messages="addUser.lastName.$error" ng-if="addUser.lastName.$dirty">
+                        <p ng-message="required">Last Name is required</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="useremail">Email Address</label>
+                    <input type="email" class="form-control" id="useremail" ng-model="signInVm.user.email" name="userEmail" placeholder="Your Email" required/>
+                    <div class="error" ng-messages="addUser.userEmail.$error" ng-if="addUser.userEmail.$dirty">
+                        <p ng-message="required">Email is required</p>
+                        <p ng-message="email">Email not in correct format</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="userpassword">Password</label>
+                    <input type="password" class="form-control" id="userpassword" ng-model="signInVm.user.password" name="userPassword" placeholder="Must be greater than 4 characters" required minlength="4"/>
+                    <div class="error" ng-messages="addUser.userPassword.$error" ng-if="addUser.userPassword.$dirty">
+                        <p ng-message="required">Password is required</p>
+                        <p ng-message="minlength">Password must be greater than 4 characters</p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <button type="submit" ng-disabled="addUser.$invalid" class="btn btn-primary">Sign In</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>

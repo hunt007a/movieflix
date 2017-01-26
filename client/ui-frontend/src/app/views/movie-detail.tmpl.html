@@ -1,0 +1,58 @@
+<div class="container">
+    <h3 class="detailHeader">{{movieDetailVm.movie.type | capitalize}} Details</h3>
+    <div class="row">
+        <div class="col-md-3">
+            <img class="poster" ng-src="{{movieDetailVm.movie.poster}}" alt="Poster">
+        </div>
+        <div class="col-md-9">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td><strong>Title</strong></td>
+                        <td><strong>{{ movieDetailVm.movie.title }}</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Year</strong></td>
+                        <td><strong>{{ movieDetailVm.movie.year }}</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Country</strong></td>
+                        <td><strong>{{ movieDetailVm.movie.country }}</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Language</strong></td>
+                        <td><strong>{{ movieDetailVm.movie.language }}</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Genre</strong></td>
+                        <td><strong>{{ movieDetailVm.movie.genre }}</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>IMDB Rating</strong></td>
+                        <td><strong>{{ movieDetailVm.movie.imdbRating }}</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Released</strong></td>
+                        <td><strong>{{ movieDetailVm.movie.released }}</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Writer</strong></td>
+                        <td><strong>{{ movieDetailVm.movie.writer }}</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Actors</strong></td>
+                        <td><strong>{{ movieDetailVm.movie.actors }}</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="plot">
+                <h3>Plot </h3>
+                <p><strong>{{movieDetailVm.movie.plot}}</strong></p>
+            </div>
+        </div>
+    </div>
+</div>

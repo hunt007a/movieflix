@@ -1,0 +1,15 @@
+<div class="well">
+    <h2 style="display:inline">New to MovieFlix</h2>
+    <a class="btn btn-primary btn-lg signup" href="#/sign-in" role="button">Sign Up</a>
+</div>
+<div class="container">
+    <div class="well"><h2>Welcome to our collection of over {{movieVm.count}} movies</h2></div>
+<section  class="moviebox" ng-repeat="movie in movieVm.movie | orderBy:'-imdbRating'">
+    <div class="row" >
+        <div class="col-md-4">
+                <a ng-href="#/movie/{{movie.id}}"><img ng-src="{{movie.poster}}" alt="Movie Poster"></a>
+        </div>
+            </div>
+
+</section>
+</div>
